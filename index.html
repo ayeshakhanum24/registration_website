@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="style-main.css">
+</head>
+
+<body>
+
+  <div class="topnav" id="myTopnav">
+    <a href="#home" class="active">Home</a>
+    <!-- <a href="#news">News</a>
+    <a href="#contact">Contact</a> -->
+    <a href="aboutus.html">About</a>
+    <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+      <i class="fa fa-bars"></i>
+    </a>
+  </div>
+
+  <div class="content" style="padding-left:16px">
+    <div>
+      <h2>SELECT THE OPTION YOU WANT TO DO  </h2>
+      <a href="register.html"><button type="button">REGISTER</button></a>
+      <a href="login.html"><button type="button">LOGIN</button></a>
+
+    </div>
+  </div>
+
+
+
+</body>
+<script>
+  function myFunction() {
+    var x = document.getElementById("myTopnav");
+    if (x.className === "topnav") {
+      x.className += " responsive";
+    } else {
+      x.className = "topnav";
+    }
+  }
+</script>
+
+</html>

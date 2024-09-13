@@ -1,0 +1,68 @@
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.blurred-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('images/background.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+    filter: blur(5px); /* Adjust the blur amount as needed */
+    z-index: -1;
+}
+
+#form-box {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 500px;
+    height: auto;
+    background-color: rgba(219, 219, 219, 0.8); /* Add transparency to make the content more visible */
+    border-radius: 10px;
+    box-shadow: 3px  6px 10px rgba(0,0,0,.7);
+    overflow: hidden; /* Hide any scroll bars that may appear if the content is too large for the container */
+}
+
+#form-box h2 {
+    text-align: center;
+}
+.innerbox{
+    margin: 10px;
+    padding: 10px;
+    border: 1px solid rgb(63, 63, 63);
+}
+.innerbox table{
+    width: 100%;
+}
+.innerbox th {
+    width: 30%;
+}
+.innerbox td {
+    width: 70%;
+}
+input{
+    width: 100%;
+}
+.innerbox button{
+    width: 100%;
+    margin: auto;
+    height: 30px;
+    border-style: hidden;
+    background-color: #228e0c;
+}
+.innerbox button:hover{
+    background-color: #1a7d0a;
+    cursor: pointer;
+}
+

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Currency Converter</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+        }
+        .converter {
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            max-width: 400px;
+            width: 100%;
+        }
+        .converter input, .converter select, .converter button {
+            width: calc(100% - 20px);
+            padding: 10px;
+            margin: 10px;
+            font-size: 1em;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        .converter button {
+            background-color: #28a745;
+            color: white;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        .converter button:hover {
+            background-color: #218838;
+        }
+        .converter button:active {
+            background-color: #1e7e34;
+        }
+    </style>
+</head>
+<body>
+    <div class="converter">
+        <h2>Currency Converter</h2>
+        <input type="number" id="amount" placeholder="Enter amount" />
+        <select id="fromCurrency">
+            <option value="USD">USD</option>
+            <option value="EUR">EUR</option>
+            <option value="GBP">GBP</option>
+            <option value="JPY">JPY</option>
+            <option value="INR">INR</option>
+            <option value="OMR">OMR</option>
+            <option value="AED">AED</option>
+            <option value="QAR">QAR</option>
+        </select>
+        <select id="toCurrency">
+            <option value="USD">USD</option>
+            <option value="EUR">EUR</option>
+            <option value="GBP">GBP</option>
+            <option value="JPY">JPY</option>
+            <option value="INR">INR</option>
+            <option value="OMR">OMR</option>
+            <option value="AED">AED</option>
+            <option value="QAR">QAR</option>
+        </select>
+        <button onclick="convertCurrency()">Convert</button>
+        <div id="result"></div>
+    </div>
+
+    <script>
+        const exchangeRates = {
+            USD: { USD: 1, EUR: 0.85, GBP: 0.75, JPY: 110, INR: 75, OMR: 0.38, AED: 3.67, QAR: 3.64 },
+            EUR: { USD: 1.18, EUR: 1, GBP: 0.88, JPY: 129, INR: 88, OMR: 0.45, AED: 4.31, QAR: 4.29 },
+            GBP: { USD: 1.34, EUR: 1.14, GBP: 1, JPY: 146, INR: 100, OMR: 0.52, AED: 4.92, QAR: 4.89 },
+            JPY: { USD: 0.0091, EUR: 0.0078, GBP: 0.0068, JPY: 1, INR: 0.68, OMR: 0.0035, AED: 0.034, QAR: 0.033 },
+            INR: { USD: 0.013, EUR: 0.011, GBP: 0.01, JPY: 1.47, INR: 1, OMR: 0.0051, AED: 0.049, QAR: 0.048 },
+            OMR: { USD: 2.60, EUR: 2.22, GBP: 1.92, JPY: 286, INR: 195, OMR: 1, AED: 9.51, QAR: 9.48 },
+            AED: { USD: 0.27, EUR: 0.23, GBP: 0.20, JPY: 29.34, INR: 20.47, OMR: 0.11, AED: 1, QAR: 0.997 },
+            QAR: { USD: 0.27, EUR: 0.23, GBP: 0.20, JPY: 29.45, INR: 20.73, OMR: 0.11, AED: 1.003, QAR: 1 }
+        };
+
+        function convertCurrency() {
+            const amount = parseFloat(document.getElementById('amount').value);
+            const fromCurrency = document.getElementById('fromCurrency').value;
+            const toCurrency = document.getElementById('toCurrency').value;
+            const rate = exchangeRates[fromCurrency][toCurrency];
+            const convertedAmount = (amount * rate).toFixed(2);
+
+            document.getElementById('result').innerText = `${amount} ${fromCurrency} = ${convertedAmount} ${toCurrency}`;
+        }
+    </script>
+</body>
+</html>

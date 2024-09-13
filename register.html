@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Input Form</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+
+<body>
+    <div class="blurred-background"></div>
+
+
+
+
+    <div id="form-box">
+        <h2>Enter Your Information</h2>
+        <div class="innerbox">
+            <form id="registrationForm" action="save_data.php" method="post">
+                <table>
+                    <tr>
+                        <th> First Name:</th>
+                        <td><input type="text" name="fname" required></td>
+                    </tr>
+                    <tr>
+                        <th> Last Name:</th>
+                        <td><input type="text" name="lname"required></td>
+                    </tr>
+                    <tr>
+                        <th> Phone Number:</th>
+                        <td><input type="number" name="phno"required></td>
+                    </tr>
+                    <tr>
+                        <th>Email:</th>
+                        <td><input type="email" name="email"required></td>
+                    </tr>
+                    <tr>
+                        <th> Password:</th>
+                        <td><input type="password" name="pwd"required></td>
+                    </tr>
+                    <tr>
+                        <th>Confirm Password:</th>
+                        <td><input type="password" name="cpwd"required></td>
+                    </tr>
+                </table>
+                <button type="submit">Sign Up</button>
+            </form>
+        </div>
+
+    </div>
+</body>
+</html>
+<script>
+    document.getElementById('registrationForm').addEventListener('submit', function(event) {
+    const pwd = document.getElementsByName('pwd')[0].value;
+    const cpwd = document.getElementsByName('cpwd')[0].value;
+    if (pwd !== cpwd) {
+      alert('Password does not match!');
+      event.preventDefault(); // Prevent form submission
+  }
+  });
+ </script>

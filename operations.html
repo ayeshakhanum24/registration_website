@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="style-main.css">
+    <style>
+        .content {
+            width: 700px;
+            height: 400px;
+            padding-left: 16px;
+            align-items: center; /* Align items vertically center */
+        }
+
+        .content > div:first-child {
+            margin-right: 20px;
+        }
+
+        #img-ctr {
+            margin-left: 10px ;
+            display: flex;
+            gap: 20px; /* Add some space between the image boxes */
+        }
+
+        .img-box {
+            text-align: center;
+            flex: 1; /* Ensures all img-box elements take equal space */
+        }
+
+        .img-box img {
+            width: 100%;
+            max-width: 180px; /* Limit the maximum width of the images */
+            height: auto;
+        }
+
+        .img-box h3 {
+            margin-top: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="topnav" id="myTopnav">
+        <a href="#home" class="active">Home</a>
+        <!-- <a href="#news">News</a>
+        <a href="#contact">Contact</a> -->
+        <a href="aboutus.html">About</a>
+        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+            <i class="fa fa-bars"></i>
+        </a>
+    </div>
+
+    <div class="content">
+        <div>
+            <h2>YOUR LOGIN IS SUCCESSFUL</h2>
+            <h2>SELECT THE OPERATION YOU WANT TO DO..</h2>
+        </div>
+        <div id="img-ctr">
+            <a href="react.html">
+                <div class="img-box">
+                    <img src="images/calc.jpg" alt="">
+                    <h3>CALCULATE</h3>
+                </div>
+            </a>
+            <a href="covert.html">
+                <div class="img-box">
+                    <img src="images/converter.jpg" alt="">
+                    <h3>CONVERT</h3>
+                </div>
+            </a>
+            <a href="login.html">
+                <div class="img-box">
+                    <img src="images/go-back.png" alt="">
+                    <h3>GO BACK</h3>
+                </div>
+            </a>
+        </div>
+    </div>
+
+    <script>
+        function myFunction() {
+            var x = document.getElementById("myTopnav");
+            if (x.className === "topnav") {
+                x.className += " responsive";
+            } else {
+                x.className = "topnav";
+            }
+        }
+    </script>
+</body>
+
+</html>
